@@ -1,0 +1,63 @@
+<link rel="import" href="../polymer/polymer-element.html">
+
+<dom-module id="base-input">
+    <template>
+        <style>
+            :host {
+                display: block;
+            }
+        </style>
+        
+        
+        <p>[[currentValue]]</p>
+        <fieldset>
+            <label for="input">[[label]]</label>
+            <input id="input" type="text" 
+            on-input="inputHandle" 
+            placeholder$="[[placeholder]]"
+            value="{{currentValue::input}}">
+        </fieldset>
+    </template>
+
+    <script>
+        class BaseInput extends Polymer.Element {
+            static get is() {
+                return 'base-input';
+            }
+
+            static get properties() {
+                return {
+                    label: {
+                        type: String,
+                        value: 'Input value'
+                    },
+                    placeholder: {
+                        type: String,
+                        value: 'Ingresa texto'
+                    },
+                    currentValue: {
+                        type: String,
+                        notify: true
+                    }
+                }
+            }
+
+            inputHandle(e) {
+                console.log(e)
+                this.dispatchEvent(new CustomEvent('custom-input', {
+                    bubbles: true,
+                    composed: true
+                }))
+            }
+
+            constructor() {
+                super()
+                this.addEventListener('current-value-changed', (e) => {
+                    console.log('Evento lanzado con la propiedad \'current-value-changed\'', e)
+                })
+            }
+        }
+
+        window.customElements.define(BaseInput.is, BaseInput);
+    </script>
+</dom-module>

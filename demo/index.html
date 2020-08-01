@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>mi-componente demo</title>
+
+    <script src="../../webcomponentsjs/webcomponents-loader.js"></script>
+
+    <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
+    <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
+    <link rel="import" href="../slot-element.html">
+    <link rel="import" href="../base-input.html">
+
+
+    <custom-style>
+        <style is="custom-style" include="demo-pages-shared-styles">
+
+        </style>
+    </custom-style>
+
+    <style>
+         :host {
+            --my-toolbar-title-color: green;
+        }
+        
+        .warning {
+            --my-toolbar-title-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="vertical-section-container centered">
+        <h3>Basic mi-componente demo</h3>
+        <demo-snippet>
+            <template>
+                <!-- <mi-componente></mi-componente> -->
+                <!-- <ciclo-vida></ciclo-vida> -->
+                <!-- <my-toolbar title="This one is green"></my-toolbar>
+                <my-toolbar title="This one is green too"></my-toolbar>
+                <my-toolbar class="warning" title="This one is red"></my-toolbar> -->
+                <!-- <mi-propiedad 
+                current-value="Holaaa" 
+                fecha-transacion="javascript: Date.now()"
+                valoracion="valor para valoracion"
+                param1="5"
+                param2="10"></mi-propiedad> -->
+
+                <!-- <mi-event-notify></mi-event-notify> -->
+                <!-- <my-gesture-events></my-gesture-events> -->
+                <!-- <employee-list></employee-list> -->
+                <!-- <my-repeat></my-repeat> -->
+                <!-- <slot-element>
+                    dentro del slot
+                    <span slot="span1">mas texto...</span>
+                    <span slot="span2Clase" class="claseSlotA">Lorem......</span>
+                    clase="claseSlotA"
+                </slot-element> -->
+
+                <!-- <array-binding></array-binding> -->
+
+                <!-- <mas-binding></mas-binding> -->
+                <!-- <dispatch-event-element></dispatch-event-element>
+                <script>
+                    document.querySelector('dispatch-event-element')
+                    .addEventListener('myEvent',(e)=>{
+                        console.log(e.detail.data, Date.now(), 'self')
+                    })
+                </script> -->
+
+                <base-input></base-input>
+            </template>
+        </demo-snippet>
+    </div>
+</body>
+
+</html>
